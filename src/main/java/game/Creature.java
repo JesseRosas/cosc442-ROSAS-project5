@@ -2,6 +2,7 @@ package game;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -52,7 +53,7 @@ public class Creature {
 	public String name() { return name; }
 
 	private Inventory inventory;
-	public Inventory inventory() { return inventory; }
+	public InventoryView inventory() { return inventory; }
 
 	private int maxFood;
 	public int maxFood() { return maxFood; }
@@ -89,7 +90,7 @@ public class Creature {
 	public void modifyRegenHpPer1000(int amount) { regenHpPer1000 += amount; }
 	
 	private List<Effect> effects;
-	public List<Effect> effects(){ return effects; }
+	public List<Effect> effects(){ return Collections.unmodifiableList(effects); }
 	
 	private int maxMana;
 	public int maxMana() { return maxMana; }

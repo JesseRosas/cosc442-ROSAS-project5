@@ -1,16 +1,16 @@
 package game;
 
-public class Inventory {
+public class Inventory implements InventoryView {
 
 	private Item[] items;
-	public Item[] getItems() { return items; }
+	public Item[] getItems() { return items.clone(); }
 	public Item get(int i) { return items[i]; }
 	
 	public Inventory(int max){
 		items = new Item[max];
 	}
 	
-	public void add(Item item){
+	void add(Item item){
 		for (int i = 0; i < items.length; i++){
 			if (items[i] == null){
 				items[i] = item;
@@ -19,7 +19,7 @@ public class Inventory {
 		}
 	}
 
-	public void remove(Item item){
+	void remove(Item item){
 		for (int i = 0; i < items.length; i++){
 			if (items[i] == item){
 				items[i] = null;
