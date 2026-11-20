@@ -90,7 +90,7 @@ public class CreatureAi {
 			if (item == null || creature.weapon() == item || creature.armor() == item)
 				continue;
 			
-			if (toThrow == null || item.thrownAttackValue() > toThrow.attackValue())
+			if (toThrow == null || item.thrownAttackValue() > toThrow.thrownAttackValue())
 				toThrow = item;
 		}
 		
