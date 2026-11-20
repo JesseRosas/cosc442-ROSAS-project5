@@ -98,6 +98,14 @@ class WorldTest {
     }
 
     @Test
+    void addingNullItemIsANoOp() {
+        World world = world(3, 3, 1);
+
+        assertTrue(world.addAtEmptySpace(null, 1, 1, 0));
+        assertNull(world.item(1, 1, 0));
+    }
+
+    @Test
     void placesCreatureOnAValidRandomLocation() {
         World world = world(4, 4, 1);
         Creature creature = creature(world, 0, 0, 0, 'g', "goblin");
